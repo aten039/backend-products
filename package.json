@@ -1,0 +1,21 @@
+{
+  "name": "proyecto_pern",
+  "version": "1.0.0",
+  "description": "rest api con expres y typescript",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon --exec ts-node src/index.ts",
+    "build": "npx tsc"
+  },
+  "author": "Elvis",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "nodemon": "^3.1.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
