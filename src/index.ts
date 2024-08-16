@@ -1,6 +1,8 @@
 import server from "./server";
+import colors from 'colors'
 
+const port = process.env.PORT ?? 3000;
 
-server.listen(4000, ()=>{
-    console.log('servidor On')
+server.listen(port, ()=>{
+    console.log(colors.cyan.bold('servidor On' ));
 })
