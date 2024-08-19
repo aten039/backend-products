@@ -7,7 +7,7 @@ async function connectDB() {
     try {
         await db.authenticate();
         
-        console.log(colors.blue('conexion exitosa a la base de datos'));
+        // console.log(colors.blue('conexion exitosa a la base de datos'));
         
     } catch (error) {
         console.log(error);
@@ -25,5 +25,8 @@ server.use(express.text());
 //routing
 server.use('/api/products', router);
 
+server.get('/api', (req,res)=>{
+    res.json({msg:'Desde Api'});
+})
 
 export default server;

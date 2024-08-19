@@ -22,11 +22,11 @@ router.post('/',
 
 
 router.put('/:id',
-    param('id').isInt().withMessage('el id debe ser un numero'), 
+    param('id').isInt().withMessage('el id debe ser un numero').custom( value => value >= 0).withMessage('El ID no puede ser negativo'), 
     body('name').notEmpty().withMessage('El nombre del producto no puede estar vacio'),
     body('price').isNumeric().withMessage('valor no valido')
     .notEmpty().withMessage('El precio del producto no puede ser vacio')
-    .custom( value => value>= 0).withMessage('El precio no puede ser negativo'),
+    .custom( value => value >= 0).withMessage('El precio no puede ser negativo'),
     body('availability').isBoolean().withMessage('Valor disponible incorrecto'),
     handleInputErrors,
     updateProduct);
