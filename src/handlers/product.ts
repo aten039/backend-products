@@ -52,7 +52,7 @@ export const updateProduct = async (req :Request, res: Response)=>{
 
         const productUpdate = await product.update(req.body);
         // const productUpdate = await product.save();
-        res.send(productUpdate);      
+        res.status(200).send(productUpdate);      
 
     } catch (error) {
         res.status(500).json({errors:{msg:'No fue encontrado'}});
