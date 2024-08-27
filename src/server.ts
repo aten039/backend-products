@@ -1,5 +1,6 @@
 import express  from "express";
 import cors,  {CorsOptions} from 'cors';
+import morgan from "morgan";
 import colors from 'colors';
 import SwaggerUi  from "swagger-ui-express";
 import swaggerSpec from "./config/swagger";
@@ -31,12 +32,16 @@ const corsOption: CorsOptions = {
         callback(new Error('Acceso Denegado'));
     }
   }
-
 }
 server.use(cors(corsOption));
 //leer datos
+
 server.use(express.json());
 server.use(express.text());
+
+//morgan 
+
+server.use(morgan('dev'));
 
 //routing
 server.use('/api/products', router);
